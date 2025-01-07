@@ -66,7 +66,7 @@ export const updateProfile = (data) => async (dispatch) => {
 export const updatePassword = (data) => async (dispatch) => {
   dispatch(updateProfileSlice.actions.updatePasswordRequest());
   try {
-    const response = await axios.put(
+    const response = await axios.post(
       "https://kaam-hryi.onrender.com/api/v1/users/updatePassword",
       data,
       {
