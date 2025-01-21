@@ -48,26 +48,21 @@ const JobPost = () => {
   ];
 
   const cities = [
-    "Karachi",
-    "Lahore",
-    "Islamabad",
-    "Rawalpindi",
-    "Faisalabad",
-    "Multan",
-    "Hyderabad",
-    "Quetta",
-    "Peshawar",
-    "Sialkot",
-    "Gujranwala",
-    "Sargodha",
-    "Bahawalpur",
-    "Sukkur",
-    "Mardan",
-    "Mingora",
-    "Sheikhupura",
-    "Mandi Bahauddin",
-    "Larkana",
-    "Nawabshah",
+    "Kathmandu",
+    "Lalitpur",
+    "Itahari",
+    "Rautahat",
+    "Fikkal",
+    "Morang",
+    "Hetauda",
+    "Biratnagar",
+    "Pokhara",
+    "Birgunj",
+    "Chitwan",
+    "Bhaktapur",
+    "Dhankuta",
+    "Dhangadhi",
+    "Janakpur",
   ];
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -132,7 +127,7 @@ const JobPost = () => {
         <select value={location} onChange={(e) => setLocation(e.target.value)}>
           <option value="">Select Job Type</option>
           {cities.map((element) => {
-            return <option value={element}>{element}</option>;
+            return <option value={element} key={element}>{element}</option>;
           })}
         </select>
       </div>

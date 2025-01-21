@@ -108,8 +108,7 @@ export const fetchJobs =
   async (dispatch) => {
     try {
       dispatch(jobSlice.actions.requestForAllJobs());
-      let link =
-        "https://kaam-hryi.onrender.com/api/v1/jobs/getAllJobs";
+      let link = "http://localhost:4000/api/v1/jobs/getAllJobs?";
       let queryParams = [];
       if (searchKeyword) {
         queryParams.push(`searchKeyword=${searchKeyword}`);
@@ -158,7 +157,7 @@ export const fetchSingleJob = (jobId) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForSingleJob());
   try {
     const response = await axios.get(
-      `https://kaam-hryi.onrender.com/api/v1/jobs/getJobsById/${jobId}`,
+      `http://localhost:4000/api/v1/jobs/get/${jobId}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForSingleJob(response.data.job));
@@ -172,7 +171,7 @@ export const postJob = (data) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForPostJob());
   try {
     const response = await axios.post(
-      `https://kaam-hryi.onrender.com/api/v1/jobs/createJob`,
+      `http://localhost:4000/api/v1/jobs/createJob`,
       data,
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
     );
@@ -187,7 +186,7 @@ export const getMyJobs = () => async (dispatch) => {
   dispatch(jobSlice.actions.requestForMyJobs());
   try {
     const response = await axios.get(
-      `https://kaam-hryi.onrender.com/api/v1/jobs/getMyJobs`,
+      `http://localhost:4000/api/v1/jobs/getmyjobs`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForMyJobs(response.data.myJobs));
@@ -201,7 +200,7 @@ export const deleteJob = (id) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForDeleteJob());
   try {
     const response = await axios.delete(
-      `https://kaam-hryi.onrender.com/api/v1/jobs/deleteJob/${id}`,
+      `http://localhost:4000/api/v1/jobs/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForDeleteJob(response.data.message));

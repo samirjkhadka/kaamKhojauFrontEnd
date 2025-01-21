@@ -84,7 +84,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForAllApplications());
   try {
     const response = await axios.get(
-      `https://kaam-hryi.onrender.com/api/v1/applications/employerGetAllApplication`,
+      `http:/localhost:4000/api/v1/applications/employerGetAllApplication`,
       {
         withCredentials: true,
       }
@@ -108,7 +108,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForMyApplications());
   try {
     const response = await axios.get(
-      `https://kaam-hryi.onrender.com/api/v1/applications/seekerGetAllApplication`,
+      `http:/localhost:4000/api/v1/applications/seekerGetAllApplication`,
       {
         withCredentials: true,
       }
@@ -132,7 +132,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForPostApplication());
   try {
     const response = await axios.post(
-      `https://kaam-hryi.onrender.com/api/v1/applications/createApplication/${jobId}`,
+      `http:/localhost:4000/api/v1/applications/createApplication/${jobId}`,
       data,
       {
         withCredentials: true,
@@ -156,7 +156,7 @@ export const deleteApplication = (id) => async (dispatch) => {
   dispatch(applicationSlice.actions.requestForDeleteApplication());
   try {
     const response = await axios.delete(
-      `https://kaam-hryi.onrender.com/api/v1/applications/deleteApplication/${id}`,
+      `http:/localhost:4000/api/v1/applications/deleteApplication/${id}`,
       { withCredentials: true }
     );
     dispatch(
